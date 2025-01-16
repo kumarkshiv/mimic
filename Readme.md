@@ -84,7 +84,7 @@ err = p.Cleanup()
 
 ## VM vs Emulator
 
-eBPF is no longer Linux specific([eBPF for windows](https://github.com/Microsoft/ebpf-for-windows)). Now the [eBPF instruction](https://www.kernel.org/doc/html/latest/bpf/instruction-set.html) set is well defined as must be constant across all platforms(perhaps with the exception of legacy cBPF instructions for packet access). However, the Linux eBPF subsystem makes use of a lot of maps, some if which are generic, but most of which are very specialized and aimed at Linux specific features like cGroups or LSM.
+eBPF is no longer Linux specific([eBPF for windows](https://github.com/Microsoft/ebpf-for-windows)). Now the [eBPF instruction]([https://www.kernel.org/doc/html/latest/bpf/instruction-set.html](https://www.kernel.org/doc/html/latest/bpf/standardization/instruction-set.html)) set is well defined as must be constant across all platforms(perhaps with the exception of legacy cBPF instructions for packet access). However, the Linux eBPF subsystem makes use of a lot of maps, some if which are generic, but most of which are very specialized and aimed at Linux specific features like cGroups or LSM.
 
 To be able to support all use cases and emulator multiple platforms/environments, Mimic splits functionality into two parts(reals). The "Virtual Machine" which is responsible for all generic features(Instructions, Registers, Memory, Processes). The "Emulator" is interchangeable and provides platform/environment specific features(Helper functions/Maps/Some other construct), besides a Linux emulator we can have a Windows emulator and users of Mimic might even implement their own emulator with custom helper functions specific to their needs.
 
